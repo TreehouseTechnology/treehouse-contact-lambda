@@ -1,0 +1,64 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  nodemailer:
+    specifier: ^7.0.5
+    version: 7.0.5
+  zod:
+    specifier: ^4.0.14
+    version: 4.0.14
+
+devDependencies:
+  '@types/aws-lambda':
+    specifier: ^8.10.152
+    version: 8.10.152
+  '@types/node':
+    specifier: ^24.1.0
+    version: 24.1.0
+  '@types/nodemailer':
+    specifier: ^6.4.17
+    version: 6.4.17
+  typescript:
+    specifier: ^5.8.3
+    version: 5.8.3
+
+packages:
+
+  /@types/aws-lambda@8.10.152:
+    resolution: {integrity: sha512-soT/c2gYBnT5ygwiHPmd9a1bftj462NWVk2tKCc1PYHSIacB2UwbTS2zYG4jzag1mRDuzg/OjtxQjQ2NKRB6Rw==}
+    dev: true
+
+  /@types/node@24.1.0:
+    resolution: {integrity: sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==}
+    dependencies:
+      undici-types: 7.8.0
+    dev: true
+
+  /@types/nodemailer@6.4.17:
+    resolution: {integrity: sha512-I9CCaIp6DTldEg7vyUTZi8+9Vo0hi1/T8gv3C89yk1rSAAzoKQ8H8ki/jBYJSFoH/BisgLP8tkZMlQ91CIquww==}
+    dependencies:
+      '@types/node': 24.1.0
+    dev: true
+
+  /nodemailer@7.0.5:
+    resolution: {integrity: sha512-nsrh2lO3j4GkLLXoeEksAMgAOqxOv6QumNRVQTJwKH4nuiww6iC2y7GyANs9kRAxCexg3+lTWM3PZ91iLlVjfg==}
+    engines: {node: '>=6.0.0'}
+    dev: false
+
+  /typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
+
+  /undici-types@7.8.0:
+    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
+    dev: true
+
+  /zod@4.0.14:
+    resolution: {integrity: sha512-nGFJTnJN6cM2v9kXL+SOBq3AtjQby3Mv5ySGFof5UGRHrRioSJ5iG680cYNjE/yWk671nROcpPj4hAS8nyLhSw==}
+    dev: false

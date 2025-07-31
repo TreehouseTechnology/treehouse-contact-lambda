@@ -1,0 +1,41 @@
+name: deploy-web-s3
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "index.ts"
+      - ".github/workflows/deploy-lambda.yml"
+
+env:
+  LAMBDA_ARN: ${{ vars.LAMBDA_ARN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Package repository and upload
+        run: |
+          pnpm install
+          pnpm build
+          zip -r function.zip dist node_modules
+
+          aws lambda update-function-code \
+            --function-name $LAMBDA_ARN \ 
+            --zip-file fileb://function.zip \
+            --publish
