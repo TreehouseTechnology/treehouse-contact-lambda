@@ -37,8 +37,4 @@ jobs:
           pnpm install
           pnpm build
           zip -r function.zip dist node_modules
-
-          aws lambda update-function-code \
-            --function-name $LAMBDA_ARN \ 
-            --zip-file fileb://function.zip \
-            --publish
+          aws lambda update-function-code --function-name $LAMBDA_ARN --zip-file fileb://function.zip --publish
