@@ -1,4 +1,4 @@
-name: deploy-web-s3
+name: deploy-lambda
 
 on:
   push:
